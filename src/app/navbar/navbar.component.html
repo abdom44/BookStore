@@ -1,0 +1,26 @@
+<nav class=" fixed-top ">
+    <div class="container d-flex py-3 justify-content-between">
+        <div class="align-items-center d-flex">
+            <img src="https://chapterone.qodeinteractive.com/wp-content/uploads/2019/08/logo.png" routerLink=""class="logo" alt="">
+    
+        <ul class="d-flex  list-unstyled align-items-center mb-0">
+        <li class="mx-3 text-capitalize" ><a routerLink="home"> home</a></li>
+        <li class="mx-3 text-capitalize" ><a routerLink="shop"> shop</a></li>
+        <li class="mx-3 text-capitalize" ><a routerLink="blog"> blog</a></li>
+        <li class="mx-3 text-capitalize" ><a routerLink="event"> event</a></li>
+        <li class="mx-3 text-capitalize" ><a routerLink="contacts"> Contact us</a></li>
+        </ul>
+        </div>
+        <ul class="d-flex  list-unstyled icons align-items-center mb-0">
+        <li class="mx-3 text-capitalize  cart" >
+            <a  routerLink="/cart"> 
+                <i class="fa-solid fa-bag-shopping position-relative fa-xl"><span class="quantity" >{{totalQuantity}}</span></i>
+                <span class=" ms-3 ">${{totalPrice}}</span>
+            </a> 
+        </li>
+        <li class="V-line"></li>
+        <li class="mx-3 text-capitalize" ><a > <i class="fas fa-search"></i></a></li>
+        <li class="V-line"></li>
+        </ul>
+    </div>
+</nav>

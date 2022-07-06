@@ -1,0 +1,26 @@
+.checkOut-header{
+    background-image: url(https://chapterone.qodeinteractive.com/wp-content/uploads/2019/07/shop-list-title-area-1.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 300px;
+    background-color: tomato;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.coupon{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #e1e1e1;
+    padding: 20px 30px;
+    color:#555555;
+    line-height: 50px;
+    font-size: 19px;
+
+}
+.coupon a{
+    font-size: 19px;
+    text-transform: capitalize;
+}

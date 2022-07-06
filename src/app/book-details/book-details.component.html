@@ -1,0 +1,108 @@
+<div class="BookDeatails-header">
+    <h6 class="text-capitalize">products</h6>
+    <h3>shoplist</h3>
+</div>
+<div class="container py-5 BookDeatails">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="book-img" *ngIf="BookDetails?.volumeInfo?.imageLinks; else Desc">
+
+                <img [src]="BookDetails?.volumeInfo?.imageLinks?.thumbnail" class="w-100 border-5 shadow-lg" alt="">
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="book px-4">
+                <div class="">
+                    <a class="author" *ngIf="BookDetails?.volumeInfo?.authors ;else author">
+                        BY {{BookDetails?.volumeInfo?.authors}}
+                    </a>
+                    <ng-template #author>
+                        <div class="author">
+                            undefined author
+                        </div>
+                    </ng-template>
+                    
+                </div>
+                <div>
+                    <h1 class="book-title">{{BookDetails?.volumeInfo?.title}}</h1>
+                </div>
+                
+                <div class="price">
+                    <div *ngIf="price!=null else Price">
+                        {{price}}
+                    </div>
+                    <ng-template #Price>
+                        ------
+                    </ng-template>
+
+                    
+                </div>
+                <div class="desc">
+                   <p *ngIf="BookDetails?.volumeInfo?.description?.length <250 &&BookDetails?.volumeInfo?.description ;else Desc">
+                    {{BookDetails?.volumeInfo?.description}}
+                   </p>
+                    
+                    
+                </div>
+                <ng-template #Desc>
+                    <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, porro totam. A cumque exercitationem cum quam blanditiis placeat nobis? Tempora pariatur vero in eius omnis quo excepturi maiores, veritatis porro harum, error minima sint doloribus incidunt ea earum, exercitationem laudantium quia. Sunt eligendi quibusdam harum similique iste nisi nemo. Natus id ad neque laborum labore, odit voluptate non quas quibusdam vero eaque delectus aliquam. Beatae pariatur perspiciatis quaerat accusantium quo qui praesentium officia tenetur quisquam!</p>
+                </ng-template>
+
+                <div class="addToCart d-flex">
+                    <div class="quantity ">
+                        Quantity
+                        <div class="d-flex ">
+                            <button 
+                                class="decrease"
+                                [disabled]="price=='Out Of Stock'||quantity<1"
+                                (click)=" quantity= quantity-1;" >
+                                    <i class="fa-solid fa-angle-left"></i></button>
+                            <input [disabled]="price=='Out Of Stock'" type="number" inputmode="numeric"  name="" [(ngModel)]="quantity" id="">
+                            <button 
+                                class="increase"
+                                [disabled]="price=='Out Of Stock'"  
+                                (click)="quantity= quantity+1;">
+                                    <i class="fa-solid fa-angle-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="add">
+                        <button class="my-btn" [disabled]="price=='Out Of Stock'||quantity<1  " (click)="addToCart(BookDetails?.id,quantity , price , false)"> add to cart </button>
+                    </div>
+                </div>
+                <div class="alert alert-danger d-none" *ngIf="isNumber"> enter valid quantity</div>
+                <div class="info mt-5">
+                    <div class="mb-2"> <span>Publisher:</span>{{BookDetails?.volumeInfo?.publisher}}</div>
+                    <div class="mb-2"> <span> published Date:</span>{{BookDetails?.volumeInfo?.publishedDate}}</div>
+                    <div class="mb-2"> <span> page Count:</span>{{BookDetails?.volumeInfo?.pageCount}}</div>
+                    <div class="mb-2" *ngIf="BookDetails?.volumeInfo?.categories"> <span> Categories:</span>{{BookDetails?.volumeInfo?.categories}}</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="filter  ">
+        <ul class="">
+            <li><button id="desc" (click)="additionalInfo = BookDetails?.volumeInfo?.description"> Description</button></li>
+            <li><button  (click)="additionalInfo = BookDetails?.volumeInfo?.subtitle;
+               ">Additional Informatio</button></li>
+            <li><button (click)="additionalInfo  = 'NO REVIEWS YET'"> Review</button></li>
+        </ul>
+       <div class="w-75 m-auto py-3" id="info">
+        {{additionalInfo}}
+       </div>
+
+    </div>
+
+</div>
+<ng-template #info class='info mt-5'>
+    <div class='mb-2'>
+         <span>Publisher:</span>{{BookDetails?.volumeInfo?.publisher}}
+    </div>
+    <div class='mb-2'>
+         <span> published Date:</span>{{BookDetails?.volumeInfo?.publishedDate}}
+    </div><div class='mb-2'>
+         <span> page Count:</span>{{BookDetails?.volumeInfo?.pageCount}}</div>
+    <div class='mb-2'>
+         <span> Categories:</span>{{BookDetails?.volumeInfo?.categories}}</div>
+</ng-template>

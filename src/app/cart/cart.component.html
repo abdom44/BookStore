@@ -1,0 +1,104 @@
+<div class="cart-header">
+    <h2 class="text-capitalize">cart</h2>
+</div>
+
+<div class="container">
+    <div class="cartDetails " *ngIf="cart.value.length!=0 else Empty ">
+        <table class="table items"  >
+            <thead>
+                <tr>
+                    <th> </th>
+                    <th></th>
+                    <th>product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>SubTotal</th>
+    
+                </tr>
+            </thead>
+            <tbody *ngFor="let CartItem of cart.value"  > 
+                <tr class="" height= '0px'>
+                    <td scope="row">
+                        <a class=" fa-solid fa-xmark"  (click)="removeFromCart(CartItem.Id, $event)"></a>
+                    </td>
+                    <td scope="row">
+                        <img [src]="CartItem.Poster" alt="">
+                    </td>
+                    <td scope="row">
+                        <div>
+                            <a [routerLink]="['/bookdetails',CartItem.Id]"class="book-title">{{CartItem.Title}}</a>
+                        </div>
+                    </td>
+                    <td>$ {{CartItem.Price}}</td>
+                    <td >
+                        <div class="quantity">
+                        <div class="d-flex justify-content-between">
+                            <button 
+                                class="decrease"
+                                [disabled]="CartItem.Quantity<1"
+                                (click)="decreaseQty(CartItem.Id)" >
+                                    <i class="fa-solid fa-angle-left"></i></button>
+                            <input   type="number" disabled="true"inputmode="numeric"  name="" [(ngModel)]="CartItem.Quantity" id="">
+                            <button 
+                                class="increase"  
+                                (click)="inCreaseQty(CartItem.Id)">
+                                    <i class="fa-solid fa-angle-right"></i>
+                            </button>
+                        </div>
+                        </div>
+                    </td>
+                    <td>$  {{CartItem.Price*CartItem.Quantity}}</td>
+                </tr>
+                
+            </tbody>
+            
+        </table>  
+        
+         <div class="coupon py-4">
+            <input type="text" placeholder="Coupon Code">
+            <button class="my-btn"> Apply Coupon</button>
+         </div>
+         <div class="basketTotals">
+            <h3 class="h1">
+                Basket Totals
+            </h3>
+            <table class="table ">
+              <tbody>
+                <tr>
+                  <!-- <th scope="row">1</th> -->
+                  <th>sub total</th>
+                  <td>$ {{_BooksService.totalPrice.value}}</td>
+                </tr>
+                <tr>
+                  <!-- <th scope="row">2</th> -->
+                  <th>shiping</th>
+                  <td>
+                    <div>
+                        Flat rate : $ {{50}}
+                    </div>
+                    <div>
+                       shiping to <strong>Egypt</strong>
+                    </div>
+                    <div>
+                        <a class="text-decoration-underline" >Change Address</a>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                    <!-- <th colspan="1">Larry the Bird</th> -->
+                  <td scope="">Total</td>
+                  <td colspan="2">$ {{_BooksService.totalPrice.value + 50}}</td>
+                </tr>
+              </tbody>
+            </table>
+            <button class="my-btn" routerLink="/checkout">
+                proceed to check out
+            </button>
+         </div>
+
+    </div>
+    
+    <ng-template #Empty>
+        <h3 class="text-center py-5">No Item Is Added In Cart</h3>
+    </ng-template>
+</div>

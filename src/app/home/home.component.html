@@ -1,0 +1,70 @@
+
+<div class="container">
+    
+    <app-slider ></app-slider>
+
+    <div class="filter ">
+        <ul class="">
+            <li><button> all</button></li>
+            <li><button> best seller</button></li>
+            <li><button> fantasy</button></li>
+            <li><button> history</button></li>
+            <li><button> art</button></li>
+            <li><button> love story</button></li>
+        </ul>
+
+    </div>
+    <div class="books row">
+        <div *ngFor="let item of Books ;let i = index" class="book ">
+            <div [title]="item.volumeInfo.title" class="book-cover-container">
+                <img [src]="item.volumeInfo.imageLinks.smallThumbnail" class="book-cover" alt="">
+                <div class="cover-layer">
+                
+                    <span title ="add to cart" (click)="addtocart(item.id,itemsPrice[i] , 1, i , true) " *ngIf="itemsPrice[i]!='Out Of Stock' ;else readMore">
+                        
+                       <div  class="span" *ngIf="!isAdded[i]  else ViewBasket" > add to cart </div>
+                    
+                        <div class="line"></div>
+                    </span>
+
+                    <ng-template #ViewBasket >
+                        <div routerLink="/cart" class="span">
+                            View Basket
+                            <div class="line"></div>
+                        </div>
+                    </ng-template>
+                    <ng-template #readMore >
+                        <div [routerLink]="['/bookdetails',item.id]" class="span">
+                            read more 
+                            <div class="line"></div>
+                        </div>
+                    </ng-template>
+
+                </div>
+            </div>
+            <div>
+                <div class="pt-3" >
+                    <a class="author" *ngIf="item.volumeInfo.authors else author" >
+                        {{item.volumeInfo.authors[0]}}
+                    </a>
+                </div>
+                <ng-template #author>
+                    <span class="author">
+                       undefined author
+                    </span>
+                </ng-template>
+                <div>
+                    <a class="book-title" [routerLink]="['/bookdetails',item.id]">{{item.volumeInfo.title}}</a>
+                </div>
+                
+                <div class="price">
+                    <div>
+                        {{itemsPrice[i]}}
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+</div>

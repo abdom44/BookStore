@@ -1,0 +1,122 @@
+.BookDeatails-header{
+    background-image: url(https://chapterone.qodeinteractive.com/wp-content/uploads/2019/07/shop-list-title-area-1.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 300px;
+    background-color: tomato;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.book .author{
+    color: #99999999;
+    letter-spacing: 3px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 12px !important;
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 50px;
+}
+.book-title{
+    text-transform: capitalize;
+    font-weight: 500;
+}
+.price{
+    font-size: 22px;
+    margin-top: 15px;
+    text-transform: capitalize;
+    color: #5c535399;
+}
+
+.desc{
+    color: #555555;
+    margin-top: 20px;
+    font-size: 19px;
+    /* font-family: ; */
+}
+.addToCart{
+    margin-top: 40px;
+}
+.addToCart .my-btn{
+    background-color: #999;
+    color: #FFF;
+    margin: 0;
+}
+.addToCart .my-btn:not(:disabled):hover{
+    background-color: #d14031;
+    transition: all .5s;
+
+
+}
+.addToCart .quantity{
+    display: flex;
+    border: 1px solid #999;
+    color: #999;
+    height:50px;
+    width: 200px;
+    /* padding: 10px; */
+    align-items: center;
+    justify-content: space-evenly;
+    margin-right: 10px;
+    font-size: 20px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+.addToCart .quantity input {
+    width: 20px;
+    text-align: center;
+    /* padding: 5px; */
+}
+.addToCart .quantity button , .addToCart .quantity input{
+    border: none;
+    outline: none;
+    background-color: white;
+    color: #999;
+}
+
+.addToCart .quantity button:hover{
+    color: #d14031;
+    transition: all .4s;
+}
+.info span{
+    margin-right: 8px;
+}
+.info {
+    font-size: 19px;
+    color: #555555;
+}
+/* ////////////// */
+.filter ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    margin: 15px auto;
+}
+.filter  ul li button{
+    text-transform: capitalize;
+    border: 1px black solid;
+    padding: 5px 40px;
+    font-weight: 500;
+    font-size: large;
+    background-color: #fff;
+    transition: all .4s;
+    outline: none;
+    box-shadow: none;
+}
+.filter  ul li button:hover ,.filter  ul li button:focus{
+    color: white;
+    background-color: black;
+}

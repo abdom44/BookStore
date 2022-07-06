@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&display=swap');
+@import "swiper/swiper-bundle.css";
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans,&display=swap');
+/* @import "swiper/css/bundle"; */
+*{
+    font-family: 'Cormorant Garamond', sans-serif;
+}
+*::selection{
+    background: #d14031;
+    color: #fff;
+}
+body{
+    background-color: #fff;
+}
+a{
+    cursor: pointer !important;
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    
+}
+a:hover{
+    color:#d14031 !important;
+    transition: all .4s !important;
+}
+.main-bgcolor{
+    background-color: #d14031;
+}
+.my-btn{
+    font-family: 'serif', sans-serif!important;
+    padding: 15px 30px;
+    letter-spacing:4.55px ;
+    border: none;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 13px;
+
+
+}
