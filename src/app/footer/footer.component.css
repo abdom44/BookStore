@@ -1,0 +1,55 @@
+.footer{
+    background-color: #282828;
+}
+.footer .title{
+    font-size: 25px;
+    margin-bottom: 24px;
+    color: white;
+}
+
+.footer .link , .footer .content{
+    color: #c4c4c4;
+    text-transform: capitalize;
+    font-size: 17px;
+    margin-bottom: 5px;
+}
+.link:hover {
+    transition: all .6s;
+    color: white !important;
+}
+.email{
+    background-color: #282828;
+    outline: none;
+    border:1px solid #999;
+    color: white;
+    padding: 12px 19px;
+    width: 100%;
+
+}
+.email:focus::-webkit-input-placeholder{
+    color:white;
+}
+.submit{
+    font-size: large;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.rights{
+    background-color: #000;
+}
+.rights div , .rights .link{
+    color: white;
+    font-size: 10px;
+    color: white;
+    letter-spacing: .35em;
+    font-family: "Josefin Sans",sans-serif;
+}
+.rights .link{
+    color: #c4c4c4;
+    /* font-family: "Josefin Sans",sans-serif; */
+}

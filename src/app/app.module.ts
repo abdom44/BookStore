@@ -17,6 +17,7 @@ import { BookDetailsComponent } from './book-details/book-details.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { CheckoutComponent } from './checkout/checkout.component';
     SliderComponent,
     BookDetailsComponent,
     CartComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
