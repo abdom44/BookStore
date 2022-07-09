@@ -1,0 +1,80 @@
+.blog-header{
+    background-color:#fbf9f6;
+    /* color: white; */
+    font-size: 25px;
+    font-weight: 500;
+}
+iframe{
+    width: 85%;
+    height: 85vh;
+
+}
+ .blog ,.comments h3 , .comment , .icon{
+    border-bottom: 1px solid #e1e1e1;
+ }
+.blog h6 a , .auther__country , .comment__country{
+    letter-spacing: 4.55px;
+    font-size: 12px;
+    font-family: "Josefin Sans",sans-serif;;
+    color: #999999;
+}
+.blog__article , .author__text , .comment__text{
+    color: #555555;
+    font-size: 19px;
+}
+.comment__content a{
+    font-size: 21px;
+    margin-right: 10px;
+}
+.reply  ,.cancel{
+    font-size: 13px !important;
+    color: #000;
+    font-family: "Josefin Sans",sans-serif;
+    text-transform: uppercase;
+    letter-spacing: .35em;
+    margin-top: 15px;
+    border-bottom: 1px solid black;
+    padding: 10px 0;
+    cursor: pointer;
+}
+.form >* {
+    position: relative;
+    width: 100%;
+    margin: 0 0 25px;
+    padding: 12px 19px;
+    font-size: 17px;
+    font-weight: 300;
+    text-transform: capitalize;
+    letter-spacing: .07em;
+    font-family: "Cormorant Garamond",sans-serif;
+    line-height: 24px;
+    color: #999;
+    background-color: transparent;
+    border: 1px solid #e1e1e1;
+    border-radius: 0;
+    outline: 0;
+    -webkit-appearance: none;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: border-color .2s ease-in-out;
+    -o-transition: border-color .2s ease-in-out;
+    transition: border-color .2s ease-in-out;
+
+}
+.form >*:focus::-webkit-input-placeholder{
+    color: #000;
+    background-color: #fff;
+}
+.form-reply .my-btn{
+    background-color: #D14031;
+    color: white;
+}
+.save label{
+    vertical-align: baseline;
+    color: #555555;
+    font-size: 18px;
+    margin-bottom:10px;
+}
+.save input{
+    margin: 3px 3px 3px 4px;
+}

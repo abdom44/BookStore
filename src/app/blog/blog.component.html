@@ -1,1 +1,127 @@
-<p>blog works!</p>
+<div class="blog-header ">
+    <div class ='container py-5'>
+        <p class="">
+            Home  /  Book Clubs   /  Five favorites for the last five months
+        </p>
+    </div>
+</div>
+<div class=" py-5 container">
+    <div class=" pb-3">
+        <iframe title="vimeo-player"  class="" src="https://player.vimeo.com/video/121661029?h=316d62dc77" width="640" height="360" frameborder="0" allowfullscreen></iframe> 
+    </div>
+   <div class="col-9">
+    <div class="blog pb-4 ">
+        <h6><a class="mx-1" >jhon stras </a> / <a  class="mx-1"> July 29 , 2019</a></h6>
+        <h2 class="h1">
+            Five favorites for the last five months
+        </h2>
+
+        <p class="  blog__article">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident… sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Lorem ipsum dolor sit amet, consectetur.
+        </p>
+        <article class="py-4 fs-5 text-black">
+            ’’Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.’’
+        </article>
+        <p class="  blog__article">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident… sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Lorem ipsum dolor sit amet, consectetur.
+        </p>
+    </div>
+    <div class="icon py-3 text-center  mt-2">
+        <a  ><i class="me-3 fa-brands fa-facebook-square"></i></a>
+        <a  ><i class="mx-3 fa-brands fa-twitter"></i></a>
+        <a  ><i class="mx-3 fa-brands fa-linkedin"></i></a>
+        <a  ><i class="mx-3 fa-brands fa-pinterest"></i></a>
+    </div>
+    <div class="author ms-5  p-4 ">
+        <div class="row">
+            <div class="col-lg-2">
+                <img src="../../assets/imges/team-1-100x100.png" class="" alt="">
+            </div>
+            <!-- <div class="col-md-"></div> -->
+            <div class="col-lg-10">
+                <div class="author__content">
+                    <div class="auther__country">
+                        Austaria
+                    </div>
+                    <a class="fs-3">John Strass</a>
+                    <div class="author__text py-2">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                    </div>
+                  
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="comment  ">
+        <h3 class="pb-4" >Comments</h3>
+        <div class="comment py-4" *ngFor="let comment of comments; let i=index">
+            <div class="row">
+                <div class="col-lg-2">
+                    <img [src]="comment.img" class="" alt="">
+                </div>
+                <!-- <div class="col-md-"></div> -->
+                <div class=" col-lg-10">
+                    <div class="comment__content">
+                       
+                        <a class="">{{comment.name}}</a>
+                        <span class="comment__country">
+                            {{comment.date}}
+                        </span>
+                        <div class="comment__text py-4">
+                            {{comment.content}}
+                        </div>
+
+                        <div *ngIf="clickedIndex[i]" class=" mb-4 form-reply">
+                          <div class="d-flex">
+                            <h4>reply to {{comment.name}}</h4>
+                            <span> <a (click)="clickedIndex[i]=false;" class="ms-3 text-danger fs-5" >cancel</a></span>
+                          </div>
+                            <div class="mt-2  form">
+                                <textarea name=""  class="" placeholder="Your Comment" id="" cols="30" rows="6"></textarea>
+                                <input required placeholder="Your Name" type="text" name="text" id="">
+                                <input required placeholder="Your Email" type="email" name="email" id="">
+                                <input required placeholder="Website" type="url" name="url" id="">
+                               
+                               
+                            </div>
+                            <div class="save">
+                                <input type="checkbox" name="save" id="save">
+                                <label for="save"  class="border-0 p-0">
+                                    Save my name, email, and website in this browser for the next time I comment.
+                                </label>
+                            </div>
+                            <button class="my-btn"> submit</button>
+
+                        </div>
+                        <span class="reply" (click)="clickedIndex[i] = true;">
+                            Reply
+                        </span>                       
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    </div>
+    <div  class=" mb-4  form-reply">
+        <h4  class="my-4">Post a Comment</h4>  
+        <div class="mt-2  form">
+              <textarea name=""  class="" placeholder="Your Comment" id="" cols="30" rows="6"></textarea>
+              <input required placeholder="Your Name" type="text" name="text" id="">
+              <input required placeholder="Your Email" type="email" name="email" id="">
+              <input required placeholder="Website" type="url" name="url" id="">
+             
+             
+          </div>
+          <div class="save">
+              <input type="checkbox" name="save" id="save">
+              <label for="save"  class="border-0 p-0">
+                  Save my name, email, and website in this browser for the next time I comment.
+              </label>
+          </div>
+          <button class="my-btn"> submit</button>
+
+      </div>
+
+   </div>
+</div>
