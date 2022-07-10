@@ -23,6 +23,17 @@ a:hover{
     color:#d14031 !important;
     transition: all .4s !important;
 }
+._header{
+    background-position: center;
+    background-size: cover;
+    height: 300px;
+    background-color: tomato;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 .main-bgcolor{
     background-color: #d14031;
 }

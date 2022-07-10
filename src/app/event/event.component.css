@@ -1,0 +1,39 @@
+._header{
+    background-image: url(../../assets/imges/event-header.jpg);
+}
+.events{
+    margin: auto;
+}
+.events .title{
+    text-align: center;
+    width: 90%;
+    margin: auto;
+}
+.title h4 , .event__location >*{
+    color: #999;
+    letter-spacing: .35em;
+    font-size: 12px;
+    font-family: "josefin sans",sans-serif;
+    font-weight: 500;
+}
+.event__location{
+    border-right: 1px solid #ccc;
+}
+.title p{
+    color: #555555;
+    font-size: 22px;
+}
+.my-btn{
+    color: #000;
+    background-color: white;
+    border: 1px solid #858483;
+}
+.my-btn:hover{
+    background-color: #363636;
+    color: #fff;
+    border: #363636 1px solid;
+    transition: all .6s;
+}
+.content>*{
+    border-bottom: 1px solid #e1e1e1;
+}

@@ -1,16 +1,11 @@
-.BookDeatails-header{
+._header{
     background-image: url(https://chapterone.qodeinteractive.com/wp-content/uploads/2019/07/shop-list-title-area-1.jpg);
-    background-position: center;
-    background-size: cover;
-    height: 300px;
-    background-color: tomato;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
 }
-
+._header h6{
+    font-family: "Josefin Sans",sans-serif;
+    letter-spacing: .35em;
+    font-size: 12px;
+}
 
 .book .author{
     color: #99999999;
