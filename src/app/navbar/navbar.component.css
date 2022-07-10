@@ -7,6 +7,20 @@ nav{
     z-index: 99999999999999999999;
     background-color: #fff;
 }
+.nav-link{
+    color: black;
+}
+.navbar-toggler{
+    background-color: #d14031;
+    box-shadow: 0 0 0 0 !important;
+}
+.navbar-toggler :focus{
+    box-shadow: 0 0 0 0 !important;
+}
+.navbar-toggler i{
+    color: white!important;
+    /* background-color: white!important; */
+}
 .V-line{
     width: 1px;
     background-color: #555555;

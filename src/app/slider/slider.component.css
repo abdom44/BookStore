@@ -98,3 +98,38 @@ height: 400px;
 .slider3 p{
     font-weight: 500;
 }
+@media screen and (max-width:1000px) {
+    .slider1 h1, .slider2 h1 , .slider3 h1{
+        font-size: 45px;
+    }
+    .swiper-slide{
+        padding: 50px 30px;
+    }
+    
+}
+@media screen and (max-width:1000px) {
+    .slider1 h1, .slider2 h1 , .slider3 h1{
+        font-size: 40px;
+    }
+    .swiper-slide{
+        padding: 50px 30px;
+    }
+    
+}
+@media screen and (max-width:527px) {
+    .slider1 h1, .slider2 h1 , .slider3 h1{
+        font-size: 30px;
+
+    }
+    .swiper-slide{
+        padding: 50px 20px;
+    }
+    .my-btn{
+        margin: 5px;
+        padding: 10px 15px;
+        font-size: 8px;
+    }
+    .slider1 p, .slider2 p , .slider3 p{
+        font-size: 16px;
+    }
+}

@@ -15,7 +15,25 @@ export class HomeComponent implements OnInit {
   isAdded:boolean[] = [false];
   itemsPrice:string[]=[];
   ngOnInit(): void {
-    this._BooksService.getBooks('drama').subscribe((respnose)=>{
+    let all =document.getElementById('all');
+    all?.click();
+  }
+  addtocart(id:string , price:string ='',quantity:number =1 , index:any , formHome:boolean){
+    
+    this.isAdded[index] =true
+    this._BooksService.updateCart(id,quantity,price , formHome);
+
+  }
+  filter(subject:string , e:any =null):void{
+    let btns =   document.querySelectorAll('.filter button');
+    for (const i in btns) {
+      console.log(btns[i]);
+      
+      btns[i].classList?.remove('actives');
+
+    }
+    e.target.classList.add('actives');
+    this._BooksService.getBooks(`${subject}`).subscribe((respnose)=>{
       this.Books = respnose.items
       for (const item of this.Books) {
         if ( item.saleInfo.saleability==='FOR_SALE') 
@@ -28,14 +46,6 @@ export class HomeComponent implements OnInit {
           this.itemsPrice.push(item.saleInfo.saleability);
       }      
     });
-
-    
-  }
-  addtocart(id:string , price:string ='',quantity:number =1 , index:any , formHome:boolean){
-    
-    this.isAdded[index] =true
-    this._BooksService.updateCart(id,quantity,price , formHome);
-
   }
 
 }

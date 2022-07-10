@@ -96,11 +96,12 @@ input[type=number] {
 .filter ul{
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    width: 50%;
     margin: 15px auto;
 }
 .filter  ul li button{
+
     text-transform: capitalize;
     border: 1px black solid;
     padding: 5px 40px;

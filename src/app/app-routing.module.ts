@@ -1,3 +1,4 @@
+import { ShopComponent } from './shop/shop.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { CartComponent } from './cart/cart.component';
 import { BookDetailsComponent } from './book-details/book-details.component';
@@ -8,8 +9,6 @@ import { BlogComponent } from './blog/blog.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { EventComponent } from './event/event.component';
 import {HomeComponent} from "./home/home.component";
-import { ShopComponent } from './shop/shop.component';
-
 const routes: Routes = [
   {path:'',redirectTo:'home',pathMatch:'full'},
   {path:'home', component:HomeComponent},

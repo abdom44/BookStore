@@ -5,17 +5,17 @@
 
     <div class="filter ">
         <ul class="">
-            <li><button> all</button></li>
-            <li><button> best seller</button></li>
-            <li><button> fantasy</button></li>
-            <li><button> history</button></li>
-            <li><button> art</button></li>
-            <li><button> love story</button></li>
+            <li><button class="mx-2" id="all" (click)="filter('horror', $event)" > best seller</button></li>
+            <li><button class="mx-2" (click)="filter('love' , $event)" > love story</button></li>
+            <li><button class="mx-2" (click)="filter('fantasy' , $event)" > fantasy</button></li>
+            <li><button class="mx-2" (click)="filter('history' , $event)" > history</button></li>
+            <li><button class="mx-2" (click)="filter('art ', $event)" > art</button></li>
+            <li><button class="mx-2"  (click)="filter('drama' , $event)" > drama</button></li>
         </ul>
 
     </div>
-    <div class="books row">
-        <div *ngFor="let item of Books ;let i = index" class="book ">
+    <div class="books row justify-content-center">
+        <div *ngFor="let item of Books ;let i = index"  class="book ">
             <div [title]="item.volumeInfo.title" class="book-cover-container">
                 <img [src]="item.volumeInfo.imageLinks.smallThumbnail" class="book-cover" alt="">
                 <div class="cover-layer">

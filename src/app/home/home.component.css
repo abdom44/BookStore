@@ -1,11 +1,14 @@
  .filter ul{
     list-style: none;
     display: flex;
-    justify-content: space-between;
-    width: 70%;
+    width: 100%;
     margin: auto;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
 }
 .filter  ul li button{
+    margin: 10px 0;
     text-transform: capitalize;
     border: 1px black solid;
     padding: 5px 40px;
@@ -16,9 +19,14 @@
     outline: none;
     box-shadow: none;
 }
-.filter  ul li button:hover ,.filter  ul li button:focus{
+/* .filter  ul li button:focus */
+.filter  ul li button:hover {
     color: white;
     background-color: black;
+}
+.actives{
+    color: white;
+    background-color: black !important;
 }
 /*******************************/
 .books{
@@ -92,8 +100,31 @@
     font-weight: 500;
 }
 .price{
-    font-size: 14px;
+    font-size: 14px ;
     margin-top: 5px;
     text-transform: capitalize;
     color: #343434;
+}
+@media screen and (max-width:1024px) {
+    .book{
+        width: 33%;
+    }    
+}
+@media screen and (max-width:768px) {
+    .book{
+        width: 50%;
+    }
+    .filter{
+        width: 100%;
+    }
+
+}
+@media screen and (max-width:527px) {
+    .book{
+        width: 90%;
+    }
+    .filter ul{
+        flex-direction: column;
+
+    }
 }
