@@ -9,7 +9,7 @@
     <div class=" pb-3">
         <iframe title="vimeo-player"  class="" src="https://player.vimeo.com/video/121661029?h=316d62dc77" width="640" height="360" frameborder="0" allowfullscreen></iframe> 
     </div>
-   <div class="col-9">
+   <div class="col-md-9">
     <div class="blog pb-4 ">
         <h6><a class="mx-1" >jhon stras </a> / <a  class="mx-1"> July 29 , 2019</a></h6>
         <h2 class="h1">
@@ -32,7 +32,7 @@
         <a  ><i class="mx-3 fa-brands fa-linkedin"></i></a>
         <a  ><i class="mx-3 fa-brands fa-pinterest"></i></a>
     </div>
-    <div class="author ms-5  p-4 ">
+    <div class="author ms-sm-5  p-4 ">
         <div class="row">
             <div class="col-lg-2">
                 <img src="../../assets/imges/team-1-100x100.png" class="" alt="">
@@ -53,12 +53,12 @@
 
         </div>
     </div>
-    <div class="comment  ">
+    <div class="comment ">
         <h3 class="pb-4" >Comments</h3>
         <div class="comment py-4" *ngFor="let comment of comments; let i=index">
             <div class="row">
                 <div class="col-lg-2">
-                    <img [src]="comment.img" class="" alt="">
+                    <img [src]="comment.img" class="my-3" alt="">
                 </div>
                 <!-- <div class="col-md-"></div> -->
                 <div class=" col-lg-10">

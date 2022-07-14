@@ -37,3 +37,17 @@
 .content>*{
     border-bottom: 1px solid #e1e1e1;
 }
+@media screen and (max-width:992px) {
+    .event__location{
+        border-right: none;
+    }   
+}
+@media screen and (max-width:425px) {
+    .my-btn{
+        font-size: 12px;
+        padding: 12px 9px;
+    } 
+    .event__location>*{
+        letter-spacing: .23em;
+    }
+}

@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
   filter(subject:string , e:any =null):void{
     let btns =   document.querySelectorAll('.filter button');
     for (const i in btns) {
-      console.log(btns[i]);
+      console.log();
       
       btns[i].classList?.remove('actives');
 
@@ -36,11 +36,13 @@ export class HomeComponent implements OnInit {
     this._BooksService.getBooks(`${subject}`).subscribe((respnose)=>{
       this.Books = respnose.items
       for (const item of this.Books) {
+        console.log(item.saleInfo.saleability);
+
         if ( item.saleInfo.saleability==='FOR_SALE') 
           this.itemsPrice.push(item.saleInfo.listPrice.amount); 
         else if (item.saleInfo.saleability==='FREE')
           this.itemsPrice.push('00.00');       
-        else if (item.saleInfo.saleability==='NOT_FOR_SALE')
+        else if (item.saleInfo.saleability==='NOT_FOR_SALE')        
           this.itemsPrice.push('Out Of Stock');
         else
           this.itemsPrice.push(item.saleInfo.saleability);

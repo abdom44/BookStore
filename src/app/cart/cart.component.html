@@ -38,7 +38,7 @@
                                 [disabled]="CartItem.Quantity<1"
                                 (click)="decreaseQty(CartItem.Id)" >
                                     <i class="fa-solid fa-angle-left"></i></button>
-                            <input   type="number" disabled="true"inputmode="numeric"  name="" [(ngModel)]="CartItem.Quantity" id="">
+                            <input   type="number" disabled="true" inputmode="numeric"  name="" [(ngModel)]="CartItem.Quantity" id="">
                             <button 
                                 class="increase"  
                                 (click)="inCreaseQty(CartItem.Id)">
@@ -55,8 +55,8 @@
         </table>  
         
          <div class="coupon py-4">
-            <input type="text" placeholder="Coupon Code">
-            <button class="my-btn"> Apply Coupon</button>
+            <input type="text" class="my-2" placeholder="Coupon Code">
+            <button class="my-btn my-2"> Apply Coupon</button>
          </div>
          <div class="basketTotals">
             <h3 class="h1">
@@ -92,7 +92,7 @@
               </tbody>
             </table>
             <button class="my-btn" routerLink="/checkout">
-                proceed to check out
+                check out
             </button>
          </div>
 

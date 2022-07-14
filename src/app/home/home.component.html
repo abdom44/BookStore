@@ -5,19 +5,19 @@
 
     <div class="filter ">
         <ul class="">
-            <li><button class="mx-2" id="all" (click)="filter('horror', $event)" > best seller</button></li>
+            <li><button class="mx-2"  (click)="filter('horror', $event)" > best seller</button></li>
             <li><button class="mx-2" (click)="filter('love' , $event)" > love story</button></li>
             <li><button class="mx-2" (click)="filter('fantasy' , $event)" > fantasy</button></li>
             <li><button class="mx-2" (click)="filter('history' , $event)" > history</button></li>
             <li><button class="mx-2" (click)="filter('art ', $event)" > art</button></li>
-            <li><button class="mx-2"  (click)="filter('drama' , $event)" > drama</button></li>
+        <li><button class="mx-2" id="all"  (click)="filter('drama' , $event)" > drama</button></li>
         </ul>
 
     </div>
     <div class="books row justify-content-center">
         <div *ngFor="let item of Books ;let i = index"  class="book ">
             <div [title]="item.volumeInfo.title" class="book-cover-container">
-                <img [src]="item.volumeInfo.imageLinks.smallThumbnail" class="book-cover" alt="">
+                <img [src]="item.volumeInfo?.imageLinks?.thumbnail" class="book-cover" alt="">
                 <div class="cover-layer">
                 
                     <span title ="add to cart" (click)="addtocart(item.id,itemsPrice[i] , 1, i , true) " *ngIf="itemsPrice[i]!='Out Of Stock' ;else readMore">
@@ -39,7 +39,6 @@
                             <div class="line"></div>
                         </div>
                     </ng-template>
-
                 </div>
             </div>
             <div>
