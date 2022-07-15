@@ -109,4 +109,7 @@ export class BooksService {
       this.totalPrice.next(this.totalPrice.value+(cartItem.Price*cartItem.Quantity))
     }
   }
+  searchByName(name:string):Observable<any>{
+    return this._HttpClient.get(`https://www.googleapis.com/books/v1/volumes?q=${name}`)
+  }
 }

@@ -116,3 +116,42 @@ input[type=number] {
     color: white;
     background-color: black;
 }
+
+.view{
+    border: 1px solid #e1e1e1;
+    color: #555555;
+    margin: 0 0 30px;
+    padding: 20px 30px;
+    font-size: 19px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.view .my-btn{
+    background-color: #d14031;
+    color: #fff;
+}
+@media screen and (max-width:766px) {
+    .view{
+        padding: 10px 15px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        text-align: center;
+    }
+    .filter li button,.desc,.info{
+        font-size: 16px;
+    }
+    .addToCart .quantity {
+        font-size: 16px;
+        width: 150px;
+    }
+    .my-btn{
+        font-size: 11px;
+        letter-spacing: .2em;
+        padding: 15px 15px;
+        width: 150px;
+    }
+}

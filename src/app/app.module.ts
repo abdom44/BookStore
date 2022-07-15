@@ -33,7 +33,7 @@ import { FooterComponent } from './footer/footer.component';
     BookDetailsComponent,
     CartComponent,
     CheckoutComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

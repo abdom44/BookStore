@@ -4,17 +4,23 @@
 </div>
 <div class="container py-5 BookDeatails">
     <div class="row">
+        <div class="view ">
+           <span class="my-2"> {{quantity}}x “{{BookDetails.value?.volumeInfo?.title}}” have been added to your Basked</span> 
+           <button  routerLink="/cart" class="my-btn my-2">
+            view basket
+           </button> 
+        </div>
         <div class="col-lg-4">
-            <div class="book-img" *ngIf="BookDetails?.volumeInfo?.imageLinks; else Desc">
+            <div class="book-img" *ngIf="BookDetails.value?.volumeInfo?.imageLinks; else Desc">
 
-                <img [src]="BookDetails?.volumeInfo?.imageLinks?.thumbnail" class="w-100 border-5 shadow-lg" alt="">
+                <img [src]="BookDetails.value?.volumeInfo?.imageLinks?.thumbnail" class="w-100 border-5 shadow-lg" alt="">
             </div>
         </div>
         <div class="col-lg-8">
             <div class="book px-lg-4">
                 <div class="">
-                    <a class="author" *ngIf="BookDetails?.volumeInfo?.authors ;else author">
-                        BY {{BookDetails?.volumeInfo?.authors}}
+                    <a class="author" *ngIf="BookDetails.value?.volumeInfo?.authors ;else author">
+                        BY {{BookDetails.value?.volumeInfo?.authors}}
                     </a>
                     <ng-template #author>
                         <div class="author">
@@ -24,7 +30,7 @@
                     
                 </div>
                 <div>
-                    <h1 class="book-title">{{BookDetails?.volumeInfo?.title}}</h1>
+                    <h1 class="book-title">{{BookDetails.value?.volumeInfo?.title}}</h1>
                 </div>
                 
                 <div class="price">
@@ -38,8 +44,8 @@
                     
                 </div>
                 <div class="desc">
-                   <p *ngIf="BookDetails?.volumeInfo?.description?.length <250 &&BookDetails?.volumeInfo?.description ;else Desc">
-                    {{BookDetails?.volumeInfo?.description}}
+                   <p *ngIf="BookDetails.value?.volumeInfo?.description?.length &&BookDetails.value?.volumeInfo?.description ;else Desc">
+                    {{BookDetails.value?.volumeInfo?.description}}
                    </p>
                     
                     
@@ -48,7 +54,7 @@
                     <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, porro totam. A cumque exercitationem cum quam blanditiis placeat nobis? Tempora pariatur vero in eius omnis quo excepturi maiores, veritatis porro harum, error minima sint doloribus incidunt ea earum, exercitationem laudantium quia. Sunt eligendi quibusdam harum similique iste nisi nemo. Natus id ad neque laborum labore, odit voluptate non quas quibusdam vero eaque delectus aliquam. Beatae pariatur perspiciatis quaerat accusantium quo qui praesentium officia tenetur quisquam!</p>
                 </ng-template>
 
-                <div class="addToCart flex-column flex-md-row d-flex">
+                <div class="addToCart flex-column flex-sm-row align-items-center d-flex">
                     <div class="quantity my-2 ">
                         Quantity
                         <div class="d-flex ">
@@ -67,15 +73,14 @@
                         </div>
                     </div>
                     <div class="add my-2">
-                        <button class="my-btn" [disabled]="price=='Out Of Stock'||quantity<1  " (click)="addToCart(BookDetails?.id,quantity , price , false)"> add to cart </button>
+                        <button class="my-btn" [disabled]="price=='Out Of Stock'||quantity<1  " (click)="addToCart(BookDetails.value?.id,quantity , price , false)"> add to cart </button>
                     </div>
                 </div>
-                <div class="alert alert-danger d-none" *ngIf="isNumber"> enter valid quantity</div>
                 <div class="info mt-5">
-                    <div class="mb-2"> <span>Publisher:</span>{{BookDetails?.volumeInfo?.publisher}}</div>
-                    <div class="mb-2"> <span> published Date:</span>{{BookDetails?.volumeInfo?.publishedDate}}</div>
-                    <div class="mb-2"> <span> page Count:</span>{{BookDetails?.volumeInfo?.pageCount}}</div>
-                    <div class="mb-2" *ngIf="BookDetails?.volumeInfo?.categories"> <span> Categories:</span>{{BookDetails?.volumeInfo?.categories}}</div>
+                    <div class="mb-2"> <span>Publisher:</span>{{BookDetails.value?.volumeInfo?.publisher}}</div>
+                    <div class="mb-2"> <span> published Date:</span>{{BookDetails.value?.volumeInfo?.publishedDate}}</div>
+                    <div class="mb-2"> <span> page Count:</span>{{BookDetails.value?.volumeInfo?.pageCount}}</div>
+                    <div class="mb-2" *ngIf="BookDetails.value?.volumeInfo?.categories"> <span> Categories:</span>{{BookDetails.value?.volumeInfo?.categories}}</div>
                 </div>
             </div>
         </div>
@@ -83,8 +88,8 @@
     </div>
     <div class="filter  ">
         <ul class=" col-12 justify-content-center justify-content-sm-between align-items-center flex-md-row flex-column col-xl-7">
-            <li class="my-3"><button id="desc" (click)="additionalInfo = BookDetails?.volumeInfo?.description"> Description</button></li>
-            <li class="my-3"><button  (click)="additionalInfo = BookDetails?.volumeInfo?.subtitle;
+            <li class="my-3"><button id="desc" (click)="additionalInfo = BookDetails.value?.volumeInfo?.description"> Description</button></li>
+            <li class="my-3"><button  (click)="additionalInfo = BookDetails.value?.volumeInfo?.subtitle;
                ">Additional Informatio</button></li>
             <li class="my-3"><button (click)="additionalInfo  = 'NO REVIEWS YET'"> Review</button></li>
         </ul>
@@ -97,12 +102,12 @@
 </div>
 <ng-template #info class='info mt-5'>
     <div class='mb-2'>
-         <span>Publisher:</span>{{BookDetails?.volumeInfo?.publisher}}
+         <span>Publisher:</span>{{BookDetails.value?.volumeInfo?.publisher}}
     </div>
     <div class='mb-2'>
-         <span> published Date:</span>{{BookDetails?.volumeInfo?.publishedDate}}
+         <span> published Date:</span>{{BookDetails.value?.volumeInfo?.publishedDate}}
     </div><div class='mb-2'>
-         <span> page Count:</span>{{BookDetails?.volumeInfo?.pageCount}}</div>
+         <span> page Count:</span>{{BookDetails.value?.volumeInfo?.pageCount}}</div>
     <div class='mb-2'>
-         <span> Categories:</span>{{BookDetails?.volumeInfo?.categories}}</div>
+         <span> Categories:</span>{{BookDetails.value?.volumeInfo?.categories}}</div>
 </ng-template>
