@@ -53,3 +53,8 @@
     color: #c4c4c4;
     /* font-family: "Josefin Sans",sans-serif; */
 }
+@media screen and (max-width:527px){
+    .rights div , .rights .link{
+        font-size: 9px;
+    }
+}

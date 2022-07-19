@@ -36,8 +36,6 @@ export class HomeComponent implements OnInit {
     this._BooksService.getBooks(`${subject}`).subscribe((respnose)=>{
       this.Books = respnose.items
       for (const item of this.Books) {
-        console.log(item.saleInfo.saleability);
-
         if ( item.saleInfo.saleability==='FOR_SALE') 
           this.itemsPrice.push(item.saleInfo.listPrice.amount); 
         else if (item.saleInfo.saleability==='FREE')
